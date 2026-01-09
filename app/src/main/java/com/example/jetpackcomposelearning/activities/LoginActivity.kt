@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,6 +19,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Devices
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -29,10 +32,16 @@ class LoginActivity : ComponentActivity() {
         }
     }
 
+    @Preview(
+        device = "spec:width=800dp,height=400dp",
+        showBackground = true,
+        showSystemUi = false
+    )
     @Composable
     fun LoginScreen(){
         var email by remember { mutableStateOf("") }
         var password by remember { mutableStateOf("") }
+
 
         Column(modifier = Modifier
             .fillMaxSize()
